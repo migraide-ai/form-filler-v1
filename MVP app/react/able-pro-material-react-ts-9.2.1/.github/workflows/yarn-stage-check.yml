@@ -1,0 +1,34 @@
+name: Yarn Build
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [stage*]
+
+jobs:
+  SFTP-deploy:
+    name: 🪛 Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      # full version build check not needed as it consider in actual deployment
+      # - name: 🔨 Build Full Version - yarn
+      #   run: |
+      #       cd full-version
+      #       yarn
+      #       yarn build
+
+      - name: 🔨 Build Seed Version - yarn
+        run: |
+          cd seed
+          yarn
+          yarn build
