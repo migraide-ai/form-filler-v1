@@ -16,7 +16,7 @@ export default function LogoSection({ isIcon, sx, to }) {
   const { isLoggedIn } = useAuth();
 
   return (
-    <ButtonBase disableRipple {...(isLoggedIn && { component: Link, to: !to ? APP_DEFAULT_PATH : to, sx })}>
+    <ButtonBase disableRipple {...(isLoggedIn && { component: Link, to: to || APP_DEFAULT_PATH, sx })}>
       {isIcon ? <LogoIcon /> : <Logo />}
     </ButtonBase>
   );

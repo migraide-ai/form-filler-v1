@@ -45,85 +45,88 @@ const Technologies = [
 
 export default function ComboPage() {
   return (
-    <Container>
-      <Grid container spacing={3} alignItems="center" justifyContent="center" sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+<Container sx={{ padding: 0 }}>
+  <Grid container spacing={1} alignItems="center" justifyContent="center" sx={{ mt: 0, mb: 0 }}>
+    <Grid item xs={12}>
+      <Grid container spacing={1} justifyContent="center" sx={{ textAlign: 'center', marginBottom: 0 }}>
         <Grid item xs={12}>
-          <Grid container spacing={2} justifyContent="center" sx={{ textAlign: 'center', marginBottom: 3 }}>
-            <Grid item xs={12}>
-              <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.2
-                }}
-              >
-                <Typography variant="h2">Complete Combo</Typography>
-              </motion.div>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.4
-                }}
-              >
-                <Typography>
-                  Able Pro caters to the needs of both developers and designers, whether they are beginners or experts.
-                </Typography>
-              </motion.div>
-            </Grid>
-          </Grid>
+          <motion.div
+            initial={{ opacity: 0, translateY: 550 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 150,
+              damping: 30,
+              delay: 0.2
+            }}
+          >
+            <Typography variant="h2" sx={{ mt: 0 }}>
+              Complete Combo
+            </Typography>
+          </motion.div>
         </Grid>
-        <Grid item xs={12}>
-          <Grid container spacing={3} alignItems="center">
-            {Technologies.map((tech, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
-                <FadeInWhenVisible>
-                  <MainCard>
-                    <Grid container spacing={3.5}>
-                      <Grid item xs={12}>
-                        <Stack spacing={1}>
-                          <Typography variant="h5">{tech.title}</Typography>
-                          <Typography>{tech.description}</Typography>
-                        </Stack>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <CardMedia component="img" image={tech.icon} sx={{ width: '100%' }} />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          size="large"
-                          startIcon={<ExportSquare />}
-                          component={Link}
-                          href={tech.preview}
-                          target="_blank"
-                          sx={{
-                            fontWeight: 500,
-                            bgcolor: 'secondary.light',
-                            color: 'secondary.darker',
-                            '&:hover': { color: 'secondary.lighter' }
-                          }}
-                        >
-                          Reference
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </MainCard>
-                </FadeInWhenVisible>
-              </Grid>
-            ))}
-          </Grid>
+        <Grid item xs={12} md={7}>
+          <motion.div
+            initial={{ opacity: 0, translateY: 550 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 150,
+              damping: 30,
+              delay: 0.4
+            }}
+          >
+            <Typography>
+              Able Pro caters to the needs of both developers and designers, whether they are beginners or experts.
+            </Typography>
+          </motion.div>
         </Grid>
       </Grid>
-    </Container>
+    </Grid>
+    <Grid item xs={12}>
+      <Grid container spacing={1} alignItems="center">
+        {Technologies.map((tech, index) => (
+          <Grid item xs={12} md={6} lg={4} key={index}>
+            <FadeInWhenVisible>
+              <MainCard>
+                <Grid container spacing={1}>
+                  <Grid item xs={12}>
+                    <Stack spacing={1}>
+                      <Typography variant="h5">{tech.title}</Typography>
+                      <Typography>{tech.description}</Typography>
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <CardMedia component="img" image={tech.icon} sx={{ width: '100%' }} />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      size="large"
+                      startIcon={<ExportSquare />}
+                      component={Link}
+                      href={tech.preview}
+                      target="_blank"
+                      sx={{
+                        fontWeight: 500,
+                        bgcolor: 'secondary.light',
+                        color: 'secondary.darker',
+                        '&:hover': { color: 'secondary.lighter' }
+                      }}
+                    >
+                      Reference
+                    </Button>
+                  </Grid>
+                </Grid>
+              </MainCard>
+            </FadeInWhenVisible>
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
+  </Grid>
+</Container>
+
   );
 }
