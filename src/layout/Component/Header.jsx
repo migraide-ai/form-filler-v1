@@ -39,7 +39,7 @@ function ElevationScroll({ children, window }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 10,
-    target: window ? window : undefined
+    target: window || undefined
   });
 
   return cloneElement(children, {
@@ -117,10 +117,10 @@ export default function Header() {
                 target="_blank"
                 underline="none"
               >
-                Dashboard
+                Home
               </Link>
               <Link className="header-link" color="primary" component={RouterLink} to="/components-overview/buttons" underline="none">
-                Components
+                Pricing
               </Link>
               <Link
                 className="header-link"
@@ -129,7 +129,7 @@ export default function Header() {
                 target="_blank"
                 underline="none"
               >
-                Documentation
+               API
               </Link>
               <Link href="https://github.com/phoenixcoded/able-pro-free-admin-dashboard-template" target="_blank" underline="none">
                 <IconButton
@@ -157,7 +157,7 @@ export default function Header() {
                     size="large"
                     variant="contained"
                   >
-                    Purchase Now
+                    Get Started
                   </Button>
                 </AnimateButton>
               </Box>

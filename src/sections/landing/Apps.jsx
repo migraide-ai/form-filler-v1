@@ -91,12 +91,12 @@ export default function AppsPage() {
             <Grid container spacing={2} justifyContent="center" sx={{ textAlign: 'center', marginBottom: 3 }}>
               <Grid item xs={12}>
                 <Typography variant="h2" color="white">
-                  Working Conceptual Apps
+                  Features
                 </Typography>
               </Grid>
               <Grid item xs={12} md={7}>
                 <Typography color="white">
-                  Each App is carefully crafted to achieve the best feature rich working concept for your project
+                 Our AI Agent has the following capabilities
                 </Typography>
               </Grid>
             </Grid>
